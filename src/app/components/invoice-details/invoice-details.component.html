@@ -1,0 +1,54 @@
+<div class="invoice-details-container">
+
+    <button (click)="onClose()" class="close">
+        <img src="./assets/close.svg" alt="close">
+    </button>
+    <h2>Facture #{{index}}</h2>
+    <div class="all-data">
+
+        <div class="data">
+            <h3>Client</h3>
+            <p>{{client.clientName}}</p>
+        </div>
+        <div class="data">
+            <h3>Jours travaillés</h3>
+            <p>{{invoice.daysWorked}}</p>
+        </div>
+        <div class="data">
+            <h3>TJM</h3>
+            <p>{{invoice.tjm}}</p>
+        </div>
+        <div class="data">
+            <h3>Chiffre d'Affaires</h3>
+            <p>{{invoice.daysWorked * invoice.tjm}}</p>
+        </div>
+    </div>
+
+    <form class="example-form" [formGroup]="formGroup" (ngSubmit)="onFormSubmit()">
+        <div class="toggle-container">
+            <mat-slide-toggle
+                    formControlName="confirmedInvoice"
+                    [(ngModel)]="confirmedInvoice"
+                    [checked]="confirmedInvoice"
+                    [color]="color"
+            >Validée
+            </mat-slide-toggle>
+            <br>
+            <mat-slide-toggle
+                    formControlName="confirmedPayment"
+                    [(ngModel)]="confirmedPayment"
+                    [checked]="confirmedPayment"
+                    [color]="color"
+            >payée
+            </mat-slide-toggle>
+        </div>
+        <button
+                mat-flat-button
+                color="primary"
+                type="submit"
+                (click)="onFormSubmit()"
+        >VALIDEZ
+        </button>
+    </form>
+</div>
+

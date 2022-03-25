@@ -10,6 +10,7 @@ export class InputComponent implements OnInit {
     @Input() label: string;
     @Input() name: string;
     @Input() type: string;
+    @Input() isReadOnly: boolean;
     constructor() {
     }
 

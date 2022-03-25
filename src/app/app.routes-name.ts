@@ -6,3 +6,5 @@ export const CONNECTED_USER_INTERFACE = 'votre-espace';
 export const CREATE_INVOICE = 'creer-une-facture';
 export const SEE_INVOICES = 'voir-mes-factures';
 export const MY_DATA = 'mes-informations';
+export const CONFIRM_INVOICE = 'confirmation-facture/:invoiceId';
+export const INVOICE_DETAILS = 'detail-facture';

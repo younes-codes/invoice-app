@@ -1,0 +1,20 @@
+<app-loader *ngIf="isLoading">Loading...</app-loader>
+<div *ngIf="!isLoading && !isConfirmed">
+    <h2>Confirmation facture {{month.toLowerCase()}}</h2>
+    <form class="example-form" (ngSubmit)="onSubmit(form)" #form="ngForm">
+        <app-input
+                [label]="daysWorked.toString()"
+                [name]="'daysWorked'"
+                [type]="'number'"
+                ngDefaultControl
+                [(ngModel)]="daysWorked"
+                [isReadOnly]="true"
+                class="ng-touched"
+        ></app-input>
+        <button mat-flat-button color="primary" type="submit">Validez</button>
+    </form>
+</div>
+
+<div>
+    <h2 *ngIf="isConfirmed">Merci pour la confirmation !</h2>
+</div>

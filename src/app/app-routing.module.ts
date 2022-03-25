@@ -3,10 +3,15 @@ import {RouterModule, Routes} from '@angular/router';
 import {AuthComponent} from "./pages/auth/auth.component";
 import {
     AUTH,
+    CONFIRM_INVOICE,
     CONNECTED_USER_INTERFACE,
     CREATE_CLIENT,
-    CREATE_COMPANY, CREATE_INVOICE,
-    DASHBOARD, MY_DATA, SEE_INVOICES
+    CREATE_COMPANY,
+    CREATE_INVOICE,
+    DASHBOARD,
+    INVOICE_DETAILS,
+    MY_DATA,
+    SEE_INVOICES
 } from "./app.routes-name";
 import {CreateClientComponent} from "./pages/create-client/create-client.component";
 import {CreateCompanyComponent} from "./pages/create-company/create-company.component";
@@ -26,12 +31,17 @@ import {
     MyDataComponent
 } from "./pages/connected-user-interface/my-data/my-data.component";
 import {AuthGuard} from "./pages/auth/auth.guard";
+import {ConfirmInvoiceComponent} from "./pages/confirm-invoice/confirm-invoice.component";
+import {
+    InvoiceDetailsComponent
+} from "./components/invoice-details/invoice-details.component";
 
 const routes: Routes = [
     {path: '', component: AuthComponent},
     {path: CREATE_COMPANY, component: CreateCompanyComponent},
     {path: CREATE_CLIENT, component: CreateClientComponent},
     {path: AUTH, component: AuthComponent},
+    {path: CONFIRM_INVOICE, component: ConfirmInvoiceComponent},
     {
         path: CONNECTED_USER_INTERFACE,
         component: ConnectedUserInterfaceComponent,
@@ -50,13 +60,19 @@ const routes: Routes = [
             {
                 path: SEE_INVOICES,
                 component: SeeInvoicesComponent,
-                data: {animationState: 'Three'}
+                data: {animationState: 'Three'},
+                children: [
+                    {
+                        path: `${INVOICE_DETAILS}/:id`,
+                        component: InvoiceDetailsComponent
+                    }
+                ]
             },
             {
                 path: MY_DATA,
                 component: MyDataComponent,
                 data: {animationState: 'Four'}
-            },
+            }
         ]
     },
 ];

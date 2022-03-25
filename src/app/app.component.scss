@@ -9,3 +9,16 @@ p {
   text-align: center;
   margin-top: 10px;
 }
+
+.install-app {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 40px;
+  background: #3f51b5;
+
+  span {
+    color: wheat;
+    font-weight: 500;
+  }
+}

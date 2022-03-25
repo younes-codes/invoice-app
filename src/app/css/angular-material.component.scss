@@ -16,6 +16,12 @@
   justify-content: center;
 }
 
+.mat-flat-button.mat-primary.mat-button-disabled {
+  background-color: rgba(63, 81, 181, 0.36);
+  cursor: not-allowed;
+
+}
+
 // TEXT
 .mat-typography p, .mat-typography h1, .mat-typography h2, .mat-typography h3 {
   margin: 0;

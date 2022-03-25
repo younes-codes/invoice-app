@@ -4,8 +4,15 @@
             [label]="'Jours travaillés'"
             [name]="'daysWorked'"
             [type]="'number'"
+            (ngModelChange)="modelChanged($event)"
             ngDefaultControl
-            ngModel
+            [(ngModel)]="daysWorked"
     ></app-input>
-    <button mat-flat-button color="primary" type="submit">Enregistrez</button>
+    <button
+            mat-flat-button
+            color="primary"
+            type="submit"
+            [disabled]="isDisabled"
+    >Enregistrez
+    </button>
 </form>

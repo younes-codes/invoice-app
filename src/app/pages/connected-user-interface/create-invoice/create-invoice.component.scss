@@ -1,0 +1,22 @@
+:host {
+
+  button {
+    position: relative;
+
+    app-loader {
+      position: absolute;
+      right: 0;
+      top: 7px;
+
+      ::ng-deep .lds-circle {
+        width: 50px;
+        height: 50px;
+
+        div {
+          width: 30px;
+          height: 30px;
+        }
+      }
+    }
+  }
+}

@@ -1,6 +1,7 @@
 import {Component, OnInit} from '@angular/core';
 import {RouterOutlet} from "@angular/router";
 import {routeTransitionAnimations} from "./route-transition-animation";
+import {BreakpointObserver, BreakpointState} from "@angular/cdk/layout";
 
 
 @Component({
@@ -10,17 +11,23 @@ import {routeTransitionAnimations} from "./route-transition-animation";
     animations: [routeTransitionAnimations]
 })
 export class ConnectedUserInterfaceComponent implements OnInit {
+    isMobile: boolean;
 
-    constructor() {
+    constructor(public breakpointObserver: BreakpointObserver) {
     }
 
     ngOnInit(): void {
+        this.breakpointObserver
+            .observe(['(min-width: 600px)'])
+            .subscribe((state: BreakpointState) => {
+                this.isMobile = !state.matches;
+            });
     }
 
     prepareRoute(outlet: RouterOutlet) {
-        return outlet &&
+        return this.isMobile ? outlet &&
             outlet.activatedRouteData &&
-            outlet.activatedRouteData['animationState'];
+            outlet.activatedRouteData['animationState'] : null;
     }
 
 }

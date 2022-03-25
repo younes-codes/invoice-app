@@ -1,3 +1,22 @@
-<h2>Mes factures</h2>
-<app-invoice-overview></app-invoice-overview>
-<app-invoice-overview></app-invoice-overview>
+<ng-template appPlaceholder></ng-template>
+<app-loader *ngIf="isLoading"></app-loader>
+<div *ngIf="!isLoading">
+    <h2>Mes factures</h2>
+
+    <div *ngFor="let invoice of invoices; let i = index">
+        <app-invoice-overview
+                [id]="i + 1"
+                [daysWorked]="invoice.daysWorked"
+                [tjm]="invoice.tjm"
+                [ca]="invoice.daysWorked * invoice.tjm"
+                [invoiceId]="invoice._id"
+                [isInvoiceConfirmed]="invoice.confirmed"
+                [isInvoicePaid]="invoice.paid"
+                (isDetailsInvoiceOpen)="removeAllInvoices($event)"
+                (click)="showInvoice(invoice._id, i +1)"
+        ></app-invoice-overview>
+    </div>
+</div>
+<div>
+    <router-outlet></router-outlet>
+</div>

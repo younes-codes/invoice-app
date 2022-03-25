@@ -1,12 +1,46 @@
 .invoice-overview {
+  display: flex;
+  flex-wrap: wrap;
   width: 90%;
   max-width: 500px;
   background-color: lightgray;
   margin: auto auto 20px;
   border-radius: 5px;
-  padding: 5px 10px;
+  padding: 5px 20px;
+  transition: .3s;
 
-  h3 {
-    margin-bottom: 10px;
+  .header {
+    width: 100%;
+    display: flex;
+    align-items: center;
+
+    h3 {
+      margin-bottom: 10px;
+      width: 100%;
+    }
+
+    img {
+      transform: translate(3px, -3px);
+    }
   }
+
+  .details, .status {
+    width: 50%;
+  }
+
+  .details {
+    p {
+      text-align: left;
+    }
+  }
+
+  .status {
+    p {
+      text-align: right;
+    }
+  }
+}
+
+.delete {
+  z-index: 999;
 }

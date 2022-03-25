@@ -4,9 +4,21 @@
   h3 {
     background: lightgray;
     padding: 10px 0 !important;
+    position: relative;
+
+    img {
+      position: absolute;
+      top: 5px;
+      right: 30px;
+    }
   }
+
   p {
     padding: 10px 0 !important;
+
+    &.blur {
+      filter: blur(4px);
+    }
   }
 }
 

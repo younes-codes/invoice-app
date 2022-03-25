@@ -1,0 +1,14 @@
+[
+  {
+    "nom": "suede",
+    "prix": 200
+  },
+  {
+    "nom": "japon",
+    "prix": 400
+  },
+  {
+    "nom": "maroc",
+    "prix": 600
+  }
+]

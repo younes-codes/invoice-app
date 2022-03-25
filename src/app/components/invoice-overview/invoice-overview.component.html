@@ -1,5 +1,25 @@
-<div class="invoice-overview">
-    <h3>Facture #1</h3>
-    <p><strong>Jours travaillés:</strong> 18</p>
-    <p><strong>CA HT:</strong> 9000 €</p>
+<div class="invoice-overview" #invoice>
+    <div class="header">
+        <h3>Facture #{{id}}</h3>
+        <img
+                src="./assets/delete.svg"
+                alt="delete"
+                (click)="deleteInvoice($event, invoiceId)"
+                *ngIf="!isInvoiceConfirmed"
+                class="delete"
+        >
+    </div>
+    <div class="details">
+        <p><strong>Jours travaillés:</strong> {{daysWorked}}</p>
+        <p><strong>TJM:</strong> {{tjm}}</p>
+        <p><strong>CA HT:</strong> {{ca}} €</p>
+    </div>
+    <div class="status">
+        <p><strong>Validée:</strong>
+            <img src="./assets/{{isInvoiceConfirmed ? 'checked': 'pending'}}.svg"
+                 alt=""></p>
+        <p><strong>Payée:</strong> <img
+                src="./assets/{{isInvoicePaid ? 'checked': 'pending'}}.svg" alt="">
+        </p>
+    </div>
 </div>

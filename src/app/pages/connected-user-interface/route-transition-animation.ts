@@ -15,8 +15,8 @@ export const routeTransitionAnimations = trigger('triggerName', [
         style({position: 'relative'}),
         query(':enter, :leave', [
             style({
-                position: 'absolute',
-                top: -20,
+                position: 'fixed',
+                top: 70,
                 right: 0,
                 width: '100%'
             })
@@ -37,8 +37,8 @@ export const routeTransitionAnimations = trigger('triggerName', [
         style({position: 'relative'}),
         query(':enter, :leave', [
             style({
-                position: 'absolute',
-                top: -20,
+                position: 'fixed',
+                top: 70,
                 left: 0,
                 width: '100%'
             })

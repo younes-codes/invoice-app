@@ -1,0 +1,25 @@
+.menu-container {
+  margin: 20px 0 !important;
+
+  nav ul {
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    height: 50px;
+    background-color: #5a68b2;
+
+    li {
+      font-weight: bold;
+      text-align: center;
+
+      a {
+        -webkit-tap-highlight-color: transparent;
+      }
+
+      a.active {
+        color: white;
+        transition: .3s ease-out;
+      }
+    }
+  }
+}

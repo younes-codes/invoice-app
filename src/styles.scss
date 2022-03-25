@@ -1,1 +1,51 @@
-/* You can add global styles to this file, and also import other style files */
+@import url('https://fonts.googleapis.com/css2?family=Lato:wght@400;700&family=Montserrat:wght@400;500;700&family=Open+Sans:wght@400;500;700;800&display=swap');
+@import "app/css/angular-material.component";
+
+* {
+  margin: 0;
+  padding: 0;
+  list-style-type: none;
+  box-sizing: border-box;
+  font-family: 'Montserrat', sans-serif;
+  text-decoration: none;
+  color: black;
+}
+
+html, body {
+  height: 100%;
+}
+
+body {
+  margin: 0;
+  font-family: Roboto, "Helvetica Neue", sans-serif;
+}
+
+.standard-page {
+  display: block;
+  margin: 100px auto;
+  max-width: 700px;
+  width: 100%;
+
+  &.connected {
+    margin: 20px auto;
+  }
+}
+
+
+form {
+  max-width: 700px;
+  width: 90%;
+  margin: auto;
+  padding-bottom: 50px;
+}
+
+h2 {
+  margin-bottom: 20px !important;
+}
+
+h2, h3 {
+  text-align: center;
+  text-transform: uppercase;
+  font-weight: bold;
+}
+

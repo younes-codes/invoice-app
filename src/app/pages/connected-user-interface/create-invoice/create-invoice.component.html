@@ -1,0 +1,11 @@
+<h2>Créez une facture</h2>
+<form class="example-form" (ngSubmit)="onSubmit(form)" #form="ngForm">
+    <app-input
+            [label]="'Jours travaillés'"
+            [name]="'daysWorked'"
+            [type]="'number'"
+            ngDefaultControl
+            ngModel
+    ></app-input>
+    <button mat-flat-button color="primary" type="submit">Enregistrez</button>
+</form>

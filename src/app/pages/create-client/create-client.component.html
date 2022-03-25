@@ -1,0 +1,19 @@
+<h2>Ajoutez un client !</h2>
+<form class="example-form" (ngSubmit)="onSubmit(form)" #form="ngForm">
+    <app-input
+            [label]="'Nom Client'"
+            [name]="'clientName'"
+            [type]="'text'"
+            ngDefaultControl
+            ngModel
+    ></app-input>
+    <app-input
+            [label]="'TJM'"
+            [name]="'tjm'"
+            [type]="'number'"
+            ngDefaultControl
+            ngModel
+    ></app-input>
+    <br>
+    <button mat-flat-button color="primary" type="submit">Enregistrez</button>
+</form>

@@ -1,0 +1,77 @@
+<h2>Créez votre entreprise !</h2>
+<form class="example-form" (ngSubmit)="onSubmit(form)" #form="ngForm">
+    <app-input
+            [label]="'Nom Entreprise'"
+            [name]="'companyName'"
+            [type]="'text'"
+            ngDefaultControl
+            ngModel
+    ></app-input>
+    <app-input
+            [label]="'Rue'"
+            [name]="'street'"
+            [type]="'text'"
+            ngDefaultControl
+            ngModel
+    ></app-input>
+    <app-input
+            [label]="'Code Postal'"
+            [name]="'postalCode'"
+            [type]="'number'"
+            ngDefaultControl
+            ngModel
+    ></app-input>
+
+    <app-input
+            [label]="'Ville'"
+            [name]="'city'"
+            [type]="'text'"
+            ngDefaultControl
+            ngModel
+    ></app-input>
+
+    <app-input
+            [label]="'Téléphone portable'"
+            [name]="'phone'"
+            [type]="'number'"
+            ngDefaultControl
+            ngModel
+    ></app-input>
+    <app-input
+            [label]="'Siret'"
+            [name]="'siret'"
+            [type]="'text'"
+            ngDefaultControl
+            ngModel
+    ></app-input>
+    <app-input
+            [label]="'Téléphone portable'"
+            [name]="'phone'"
+            [type]="'number'"
+            ngDefaultControl
+            ngModel
+    ></app-input>
+    <app-input
+            [label]="'IBAN'"
+            [name]="'iban'"
+            [type]="'text'"
+            ngDefaultControl
+            ngModel
+    ></app-input>
+    <app-input
+            [label]="'BIC'"
+            [name]="'bic'"
+            [type]="'text'"
+            ngDefaultControl
+            ngModel
+    ></app-input>
+    <app-input
+            [label]="'TVA'"
+            [name]="'tva'"
+            [type]="'text'"
+            ngDefaultControl
+            ngModel
+    ></app-input>
+    <br>
+    <button mat-flat-button color="primary" type="submit">Enregistrez</button>
+</form>
